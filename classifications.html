@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classifications | QA Cinema</title>
+
+<!-- Bootstrap -->
+<style type="text/css">
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap.css");
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap.min.css");
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap-theme.css");
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css");
+
+body {
+	background: #EEEEEE !important;
+}
+</style>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">Logo</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+      <ul class="nav navbar-nav">
+       
+        <li><a href="homepage.html"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span></a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Movies<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="movies.html#current" id="currentdrop" onClick="window.location.reload()">Current</a></li>
+            <li class="divider"></li>
+            <li><a href="movies.html#upcoming" id="upcomingdrop" onClick="window.location.reload()">Upcoming</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+ <br><br><br>
+  <div class="container-fluid">
+  <table width="100%" border="1" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <th scope="col" width="20%" style="text-align: center">Classification</th>
+      <th scope="col" width="20%" style="text-align: center">Description</th>
+      <th scope="col" width="60%" style="text-align: center">Details</th>
+    </tr>
+    <tr>
+      <td><img src="images/Bbfc_uc.gif"><br>Universal Children<br><br><img src="images/Bbfc_u.gif"><br>Universal</td>
+      <td>Titles rated bbfc-uc have been classified suitable for all</td>
+      <td style="text-align: left">
+      
+      <b>Discrimination:</b><br>Discriminatory language or behaviour is unlikely to be acceptable unless clearly disapproved of.
+      <br><br>
+      <b>Drugs:</b><br> References to illegal drugs or drug misuse must be infrequent and innocuous, or have a clear educational purpose or anti-drug message suitable for young children.
+      <br><br>
+      <b>Imitable behaviour:</b><br> Potentially dangerous or anti-social behaviour which young children may copy must be clearly disapproved of. No emphasis on realistic or easily accessible weapons.
+      <br><br>
+      <b>Language:</b><br> Infrequent use only of very mild bad language.
+      <br><br>
+      <b>Nudity:</b><br> Occasional nudity, with no sexual context.
+	  <br><br>
+	  <b>Sex:</b><br> Only very mild sexual behaviour (for example, kissing) and references to such behaviour.
+      <br><br>
+      <b>Threat:</b><br> Scary or potentially unsettling sequences should be mild, brief and unlikely to cause undue anxiety to young children. The outcome should be reassuring.
+	  <br><br>
+      <b>Violence:</b><br> Violence will generally be very mild. Mild violence may be acceptable if it is justified by context (for example, comedic, animated, wholly unrealistic)</td>
+    </tr>
+    <tr>
+      <td><img src="images/Bbfc_pg.gif"><br>Parental Guidance</td>
+      <td>Titles rated bbfc-pg are for general viewing, but some scenes may be unsuitable for young children</td>
+      <td style="text-align: left">
+      <b>Discrimination:</b><br>Discriminatory language or behaviour is unlikely to be acceptable unless clearly disapproved of, or in an educational or historical context, or in a particularly dated work with no likely appeal to children. Discrimination by a character with whom children can readily identify is unlikely to be acceptable.
+      <br><br>
+      <b>Drugs:</b><br> References to illegal drugs or drug misuse must be innocuous or carry a suitable anti-drug message.
+	  <br><br>
+      <b>Imitable behaviour:</b><br> No detail of potentially dangerous behaviour which young children are likely to copy, if that behaviour is presented as safe or fun. No glamorisation of realistic or easily accessible weapons such as knives. No focus on anti-social behaviour which young children are likely to copy.
+	  <br><br>
+      <b>Language:</b><br> Mild bad language only. Aggressive or very frequent use of mild bad language may result in a work being passed at a higher category.
+	  <br><br>
+      <b>Nudity:</b><br> There may be nudity with no sexual context.
+	  <br><br>
+      <b>Sex:</b><br> Sexual activity may be implied, but should be discreet and infrequent. Mild sex references and innuendo only.<br><br>
+      <b>Threat:</b><br> Frightening sequences or situations where characters are in danger should not be prolonged or intense. Fantasy settings may be a mitigating factor.
+	  <br><br>
+      <b>Violence:</b><br> Violence will usually be mild. However there may be moderate violence, without detail, if justified by its context (for example, history, comedy or fantasy).</td>
+        </tr>
+      <tr>
+            <td><img src="images/Bbfc_12a.gif"><br>12 Accompanied/Advisory<br><br><img src="images/Bbfc_12.gif"><br>12</td>
+            <td>Titles rated bbfc-12a are suitable for 12 years and over. No-one younger than 12 may see a '12A' film in a cinema unless accompanied by an adult.
+            <br><br>Titles rated bbfc-12 are for 12 and over. Responsibility for allowing under-12s to view lies with the accompanying or supervising adult.
+            <br><br></td>
+            <td style="text-align: left">
+            <b>Discrimination:</b><br>Discriminatory language or behaviour must not be endorsed by the work as a whole. Aggressive discriminatory language or behaviour is unlikely to be acceptable unless clearly condemned.
+            <br><br>
+            <b>Drugs:</b> <br> Misuse of drugs must be infrequent and should not be glamorised or give instructional detail.
+            <br><br> <b>Imitable behaviour:</b><br> No promotion of potentially dangerous behaviour which children are likely to copy. No glamorisation of realistic or easily accessible weapons such as knives. No endorsement of anti-social behaviour.
+            <br><br>
+            <b>Language:</b><br> There may be moderate language. Strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.
+            <br><br>
+            <b>Nudity:</b><br> There may be nudity, but in a sexual context it must be brief and discreet.
+            <br><br>
+            <b>Sex:</b><br> Sexual activity may be briefly and discreetly portrayed. Moderate sex references are permitted, but frequent crude references are unlikely to be acceptable.
+            <br><br>
+            <b>Threat:</b><br> There may be moderate physical and psychological threat and horror sequences. Although some scenes may be disturbing, the overall tone should not be. Horror sequences should not be frequent or sustained.
+            <br><br>
+            <b>Violence:</b><br> There may be moderate violence but it should not dwell on detail. There should be no emphasis on injuries or blood, but occasional gory moments may be permitted if justified by the context. Sexual violence may only be implied or briefly and discreetly indicated, and its depiction must be justified by context.</td>
+        </tr>
+    <tr>
+      <td><img src="images/Bbfc_15.gif"><br>15</td>
+      <td>Titles rated bbfc-15 are suitable only for 15 years and over. No-one younger than 15 may see a '15' film in a cinema</td>
+      <td style="text-align: left"><b>Discrimination:</b><br>The work as a whole must not endorse discriminatory language or behaviour, although there may be racist, homophobic or other discriminatory themes and language.<br><br> <b>Drugs:</b> <br> Drug taking may be shown but the work as a whole must not promote or encourage drug misuse (for example, through instructional detail). The misuse of easily accessible and highly dangerous substances (for example, aerosols or solvents) is unlikely to be acceptable.
+      <br><br>
+      <b>Imitable behaviour:</b><br> Dangerous behaviour (for example, hanging, suicide and self-harming) should not dwell on detail which could be copied. Whether the depiction of easily accessible weapons is acceptable will depend on factors such as realism, context and setting.
+      <br><br>
+      <b>Language:</b><br> There may be strong language. Very strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.
+      <br><br>
+      <b>Nudity:</b><br> There are no constraints on nudity in a non-sexual or educational context. There may be nudity in a sexual context but usually without strong detail.
+	  <br><br>
+      <b>Sex:</b><br> Sexual activity may be portrayed, but usually without strong detail. There may be strong verbal references to sexual behaviour, but the strongest references are unlikely to be acceptable unless justified by context. Works whose primary purpose is sexual arousal or stimulation are unlikely to be acceptable.
+      <br><br>
+      <b>Threat:</b><br> There may be strong threat and horror. A sustained focus on sadistic or sexual threat is unlikely to be acceptable.
+      <br><br>
+      <b>Violence:</b><br> Violence may be strong but should not dwell on the infliction of pain or injury. The strongest gory images are unlikely to be acceptable. Strong sadistic violence is also unlikely to be acceptable. There may be detailed verbal references to sexual violence but the depiction of sexual violence must be discreet and justified by context.</td>
+    </tr>
+    <tr>
+      <td><img src="images/Bbfc_18.gif"><br>18</td>
+      <td>Titles rated bbfc-18 are suitable only for adults. No-one younger than 18 may see an '18' film in a cinema</td>
+      <td style="text-align: left">Adults should be free to choose their own entertainment. <br> <b>Exceptions are most likely in the following areas:</b>
+      <br><br>
+      <b>Criminal law:</b><br>Material is in breach of the criminal law, or has been created through the commission of a criminal offence
+      <br><br>
+      <b>Risk of harm to individuals:</b><br>Material or treatment appears to us to risk harm to individuals or, through their behaviour, to society. For example, the detailed portrayal of violent or dangerous acts, or of illegal drug use, which may cause harm to public health or morals. This may include portrayals of sadistic or sexual violence which make this violence look appealing; reinforce the suggestion that victims enjoy sexual violence; or which invite viewer complicity in sexual violence or other harmful violent activities
+      <br><br>
+      <b>Sex education:</b><br>Material genuinely seeks to inform and educate in matters such as human sexuality or safer sex and health, explicit images of sexual activity may be permitted.
+      <br><br>
+      <b>Sex works for arousal:</b><br>Material whose primary purpose is sexual arousal or stimulation. Sex works containing only material which may be simulated are generally passed 18. Sex works containing clear images of real sex, strong fetish material, sexually explicit animated images, or other very strong sexual images will be confined to the R18 category. Material which is unacceptable in a sex work at R18 is also unacceptable in a sex work at 18.</td>
+    </tr>
+    <tr>
+    <td><img src="images/Bbfc_r18.gif"><br>Restricted 18</td>
+      <td>To be shown only in specially licensed cinemas, or supplied only in licensed sex shops, and to adults only</td>
+      <td style="text-align: left">For full details of the legal restrictions for these works please see the: <br><br>
+      <p style="text-align: center"><a href="https://www.bbfc.co.uk/sites/default/files/attachments/BBFC%20Classification%20Guidelines%202014_5.pdf">BBFC Classification Guidelines document</a></p></td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+	<br>
+<div class="row">
+    <div class="text-center col-md-6 col-md-offset-3">
+      <p>&copy; <a href="homepage.html" >QA Cinema</a> &middot; All Rights Reserved &middot; </p>
+    </div>
+    <br>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+
+<script>searchfunction</script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movies | QA Cinema</title>
+
+<!-- Bootstrap -->
+<style type="text/css">
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap.css");
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap.min.css");
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap-theme.css");
+@import url("css/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css");
+	
+body {
+	background: #EEEEEE !important;
+}
+	
+	/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float:left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img__wrap {
+  position: relative;
+  height:auto;
+  width:60%;
+}
+
+.img__description_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(79,79,79,0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+  transform: translateY(0);
+}
+	
+.glyphicon-star {
+  font-size: 20px;
+  color: #FFD700;
+/*
+  &.half {
+    position: relative;
+    &:before {
+      position: relative;
+      z-index: 9;
+      width: 47%;
+      display: block;
+      overflow: hidden;
+    }
+    &:after {
+      content: '\e006';
+      position: absolute;
+      z-index: 8;
+      color: #bdc3c7;
+      top: 0;
+      left: 0;
+    }
+  }
+*/
+}
+	
+.glyphicon-nostar {
+  font-size: 20px;
+  color:#A8A6A6;
+}
+	
+.nav-center {  
+  text-align: center;
+  ul.nav {
+    display: inline-block;
+    li {
+      display: inline
+      a {
+        float: left
+      }
+    }
+  }
+}
+</style>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">Logo</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+      <ul class="nav navbar-nav">
+        <li><a href="homepage.html"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span></a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Movies<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="movies.html#current" id="currentdrop" onClick="window.location.reload()">Current</a></li>
+            <li class="divider"></li>
+            <li><a href="movies.html#upcoming" id="upcomingdrop" onClick="window.location.reload()">Upcoming</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+<div class="container-fluid" align="center">
+  <br>
+  <div class="nav-center" role="tabpanel" align="center">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#current" data-toggle="tab" role="tab" aria-controls="tab1">Current</a></li>
+      <li role="presentation"><a href="#upcoming" data-toggle="tab" role="tab" aria-controls="tab2">Upcoming</a></li>
+    </ul>
+    <div id="tabContent1" class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="current"><br>
+      <div class="row" align="center">
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Avengers: Infinity Way <br><br> The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe<br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/xqECHNvzbDL5I3iiOVUkVPJMSbc.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">The Meg <br><br> After escaping an attack by what he claims was a 70-foot shark, Jonas Taylor must confront his fears to save those trapped in a sunken submersible <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Deadpool 2 <br><br> Foul-mouthed mutant mercenary Wade Wilson (AKA. Deadpool), brings together a team of fellow mutant rogues to protect a young boy with supernatural abilities from the brutal, time-traveling cyborg, Cable <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/AkJQpZp9WoNdj7pLYSj1L0RcMMN.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Mission: Impossible - Fallout <br><br> Ethan Hunt and his IMF team, along with some familiar allies, race against time after a mission gone wrong <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      </div>
+      <hr>
+      
+      <div class="row" align="center">
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/rv1AWImgx386ULjcf62VYaW8zSt.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Ant-Man and The Wasp <br><br> As Scott Lang balances being both a Super Hero and a father, Hope van Dyne and Dr. Hank Pym present an urgent new mission that finds the Ant-Man fighting alongside The Wasp to uncover secrets from their past <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/eXXpuW2xaq5Aen9N5prFlARVIvr.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Tag <br><br> A small group of former classmates organize an elaborate, annual game of tag that requires some to travel all over the country <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/x1txcDXkcM65gl7w20PwYSxAYah.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Incredibles 2 <br><br> Bob Parr (Mr. Incredible) is left to care for the kids while Helen (Elastigirl) is out saving the world <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/aWicerX4Y7n7tUwRAVHsVcBBpj2.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Mamma Mia! Here We Go Again <br><br> Five years after the events of Mamma Mia! (2008), Sophie learns about her mother's past while pregnant herself <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      </div>
+      <hr>
+      
+      <div class="row" align="center">
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/2slvblTroiT1lY9bYLK7Amigo1k.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">The First Purge <br><br> America's third political party, the New Founding Fathers of America, comes to power and conducts an experiment: no laws for 12 hours on Staten Island. No one has to stay on the island, but $5,000 is given anyone who does <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/cQvc9N6JiMVKqol3wcYrGshsIdZ.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">The Equalizer 2 <br><br> Robert McCall serves an unflinching justice for the exploited and oppressed, but how far will he go when that is someone he loves? <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-star"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/9N0T3BaHZNdUCcMZQIM3yMUFwEh.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Searching <br><br> After his 16-year-old daughter goes missing, a desperate father breaks into her laptop to look for clues to find her <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/gZiu9RIcMeQLUaDVqQffQTl6bhy.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Black 47 <br><br> Set in Ireland during the Great Famine, the drama follows an Irish Ranger who has been fighting for the British Army abroad, as he abandons his post to reunite with his family <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>      
+      </div>
+      </div>
+      </div>
+      
+      <div role="tabpanel" class="tab-pane fade" id="upcoming">
+      <br>
+      <div class="row" align="center">
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">The Nun <br><br> A priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate the death of a young nun in Romania and confront a malevolent force in the form of a demonic nun <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/9kB56ZdMB6RgY5QtX9Bar45jCeI.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">A.X.L. <br><br> A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/4RnOaka3OkoFKWzMc8m8WbhaPww.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Yardie <br><br> Jamaica, 1973. When a young boy witnesses his brother’s assassination, a powerful Don gives him a home. But 10 years later, when he’s sent to London, his past catches up to him <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/sT8LCJYy0e2rDOnlS5vfvtxOOn1.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Creed II <br><br> Under the tutelage of Rocky Balboa, newly crowned light heavyweight champion Adonis Creed faces off against Viktor Drago, the son of Ivan Drago <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      </div>
+      <hr>
+      
+      <div class="row" align="center">
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/zxLr3IaoMMHEcTZ5QfhK7vtoEkD.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">First Man <br><br> A look at the life of the astronaut, Neil Armstrong, and the legendary space mission that led him to become the first man to walk on the Moon on July 20, 1969 <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/pOTYsL5bGrNoUlStI9Q2AEuO27s.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Alpha <br><br> A world's #1 assassin trying to disappear from his past is involuntarily entered into a contest where the best killers in the world are pitted against each other with the last one alive the winner <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/ydUpl3QkVUCHCq1VWvo2rW4Sf7y.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Aquaman <br><br> Arthur Curry learns that he is the heir to the underwater kingdom of Atlantis, and must step forward to lead his people and to be a hero to the world <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/vqLahQayycE6KscbS2APBkIcB6F.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">A Simple Favor <br><br> A SIMPLE FAVOR, directed by Paul Feig, centers around Stephanie (Anna Kendrick), a mommy vlogger who seeks to uncover the truth behind her best friend Emily's (Blake Lively) sudden disappearance from their small town <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      </div>
+      <hr>
+      
+      <div class="row" align="center">
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/oBysFnbG7ZfbaApAMvU9TOru5O0.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Fantastic Beasts: The Crimes of Grindelwald <br><br> Gellert Grindelwald has escaped imprisonment and has begun gathering followers to his cause—elevating wizards above all non-magical beings. <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Venom <br><br> When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego "Venom" to save his life <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/80R9mbC0cJhasCSUgy1OSpcaTDI.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">The Predator <br><br> When a young boy accidentally triggers the universe's most lethal hunters' return to Earth, only a ragtag crew of ex-soldiers and a disgruntled science teacher can prevent the end of the human race <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="img__wrap">
+      <img src="https://image.tmdb.org/t/p/w200/xXPnPpV7MnYdybL8XsrOWzOPlqF.jpg" class="img-rounded img-responsive" alt="Placeholder image">
+      <div class="img__description_layer">
+		<p class="img__description">Robin Hood <br><br> A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown in a thrilling action-adventure packed with gritty battlefield exploits, mind-blowing fight choreography, and a timeless romance <br><br>
+	  	<span>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		  <i class="glyphicon glyphicon-nostar"></i>
+		</span></p>
+	  </div>
+      </div>
+      </div>
+      </div>
+      </div>
+  </div>
+<hr>
+  <div class="row">
+  
+   <hr>
+    <div class="text-center col-md-6 col-md-offset-3">
+      <p>&copy; <a href="homepage.html" >QA Cinema</a> &middot; All Rights Reserved &middot; </p>
+    </div>
+  </div>
+  <br>
+</div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+<!--style="background: #F4871E !important-->
+
+<script>
+$(function(){
+  var hash = window.location.hash;
+  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+  $('.nav-tabs a').click(function (e) {
+    $(this).tab('show');
+    var scrollmem = $('body').scrollTop();
+    window.location.hash = this.hash;
+    $('html,body').scrollTop(scrollmem);
+	  window.scrollTo(0, 0);
+  });
+});
+</script>
+</body>
+</html>
